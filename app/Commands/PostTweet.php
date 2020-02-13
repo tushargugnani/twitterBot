@@ -82,10 +82,12 @@ class PostTweet extends Command
                 //Post Tweet
                 $browser->assertSee('Home')
                     ->pause(2000)
+                    ->visit('https://twitter.com/compose/tweet')
+                    ->pause(3000)
                     ->click('.public-DraftStyleDefault-block')
                     ->keys(".public-DraftStyleDefault-block", $tweet)
                     ->pause(4000)
-                    ->click('div[data-testid="tweetButtonInline"]')
+                    ->click('div[data-testid="tweetButton"]')
                     ->pause(3000);
          
         });
